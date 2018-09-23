@@ -1,0 +1,115 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Angular component libraries</title>
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <!--<link rel="stylesheet" href="css/theme/black.css">-->
+    <link rel="stylesheet" href="css/theme/night.css">
+    <link rel="stylesheet" href="css/custom.css">
+
+    <!-- Highlight.js -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/default.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/styles/atom-one-dark.min.css">
+
+
+    <!-- Theme used for syntax highlighting of code -->
+    <!--<link rel="stylesheet" href="lib/css/zenburn.css">-->
+
+    <!-- Printing and PDF exports -->
+    <script>
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+        document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+</head>
+<body>
+<div class="reveal">
+    <div class="slides">
+
+        <!-- Title -->
+        <section>
+            <h3 style="line-height: 2em">
+                <img src="img/AngularJS-Shield-transparent.svg" style="display: inline-block; box-shadow: none; border: none; height: 1.5em; vertical-align: middle; background: rgba(0, 0, 0, 0)">
+                ngular
+                <br>
+                Component Libraries
+            </h3>
+            <p>before Angular v6 ... and after</p>
+            <small>
+            <p>presented by <a href="https://github.com/chrisraiskin/">chris.raiskin</a></p>
+            </small>
+        </section>
+
+        <!-- About -->
+
+        <section>
+            <h3>About me:</h3>
+            <ul>
+                <li>full-stack developer</li>
+                <ul>
+                    <li>20+ yrs</li>
+                    <li>ton of Java b/e, APIs and middleware</li>
+                    <li>~ 2+ yrs of Angular</li>
+                    <li>have to come to appreciate TypeScript.. </li>
+                    <li>working for Standard Insurance</li>
+                </ul>
+            </ul>
+        </section>
+
+        <!-- Where I work -->
+
+        <section>
+            <h3>What I do:</h3>
+            <ul>
+                <li>working for Standard Insurance</li>
+                <li>member of a "portal" team at the Standard</li>
+                <li>which</li>
+                <ul>
+                    <li>introduced Angular at Standard</li>
+                    <li>while migrating away from WebSphere portal</li>
+                    <li>partnered with the UX team</li>
+                    <li>to ensure theme and style consistency</li>
+                    <li>across home-grown web apps</li>
+                </ul>
+
+            </ul>
+        </section>
+
+        <!-- Why Angular libraries -->
+
+        <section>
+
+            <h3>why Angular component libraries</h3>
+
+        </section>
+    </div>
+</div>
+
+<script src="lib/js/head.min.js"></script>
+<script src="js/reveal.js"></script>
+
+<script>
+    // More info about config & dependencies:
+    // - https://github.com/hakimel/reveal.js#configuration
+    // - https://github.com/hakimel/reveal.js#dependencies
+    Reveal.initialize({
+        dependencies: [
+            {src: 'plugin/markdown/marked.js'},
+            {src: 'plugin/markdown/markdown.js'},
+            {src: 'plugin/notes/notes.js', async: true},
+            {
+                src: 'plugin/highlight/highlight.js', async: true, callback: function () {
+                    hljs.initHighlightingOnLoad();
+                }
+            }
+        ]
+    });
+</script>
+</body>
+</html>
