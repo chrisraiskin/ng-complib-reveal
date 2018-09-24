@@ -49,15 +49,15 @@
         <!-- About -->
 
         <section>
-            <h3>About me:</h3>
+            <h3>Who I am</h3>
             <ul>
                 <li>full-stack developer</li>
                 <ul>
                     <li>20+ yrs</li>
                     <li>ton of Java b/e, APIs and middleware</li>
                     <li>~ 2+ yrs of Angular</li>
-                    <li>have to come to appreciate TypeScript.. </li>
-                    <li>working for Standard Insurance</li>
+                    <li>have come to appreciate TypeScript</li>
+                    <li>moving between Java and Angular</li>
                 </ul>
             </ul>
         </section>
@@ -65,15 +65,15 @@
         <!-- Where I work -->
 
         <section>
-            <h3>What I do:</h3>
+            <h3>What I do</h3>
             <ul>
                 <li>working for Standard Insurance</li>
-                <li>member of a "portal" team at the Standard</li>
+                <li>lead of the "portal" team</li>
                 <li>which</li>
                 <ul>
-                    <li>introduced Angular at Standard</li>
+                    <li>has introduced Angular at Standard</li>
                     <li>while migrating away from WebSphere portal</li>
-                    <li>partnered with the UX team</li>
+                    <li>has partnered with the UX team</li>
                     <li>to ensure theme and style consistency</li>
                     <li>across home-grown web apps</li>
                 </ul>
@@ -85,19 +85,221 @@
 
         <section>
 
-            <h3>why Angular component libraries</h3>
+            <h3>why component libraries?</h3>
             <ul>
-                <li>distribute</li>
+                <li>to achieve theme/style consistency</li>
+                <li>we wanted to distribute:</li>
                 <ul>
-                    <li>common them components, like header and footer</li>
+                    <li>common theme components, like header and footer</li>
+                    <li>that we could include into Angular template</li>
+                    <pre><code>
+    <sfg-brand-header></sfg-brand-header>
+    <consuming-app-content></consuming-app-content>
+    <sfg-brand-footer></sfg-brand-footer>
+                    </code>
+                    </pre>
                     <li>common services, e.g. IAM services</li>
                     <li>global styles</li>
                     <li>global assets</li>
                 </ul>
-
             </ul>
+        </section>
+
+        <!-- Cold winter of 2016 -->
+
+        <section>
+            <h3>It was a cold winter of 2016 .. </h3>
+            <img src="./img/portland-winter-of-snow-and-ice-2016.jpg" style="width: 15em"/>
+            <ul>
+                <li>Angular 4 just came out and</li>
+                <li>angular/cli still had no library support..</li>
+            </ul>
+        </section>
+
+        <!-- What options existed in 2016/2017? -->
+
+        <section>
+            <h3>Our options in 2016</h3>
+            <p class="left-align">
+                Essentially, two:
+            </p>
+            <ol>
+                <li>a fairly complex one that</li>
+                <ul>
+                    <li>compiles the sources</li>
+                    <li>inlines CSS and HTML</li>
+                    <li>runs Rollup.js to build UMD* and ES5 modules</li>
+                </ul>
+            or ..
+                <li>a relatively simple one that </li>
+                <ul>
+                    <li>
+                        publishes TypeScript sources, styles and assets to npm.
+                    </li>
+                </ul>
+            </ol>
+            <br/>
+            <br/>
+            <div class="left-align">
+                <minor>
+                    <small>
+                    *UMD - Universal Module Definition for JavaScript modules
+                    </small>
+                </minor>
+            </div>
+        </section>
+
+        <!-- Which was the right one for us? -->
+
+        <section>
+            <h3>Which option</h3>
+            <p class="left-align">was the right one for us in 2016?</p>
+            <p class="left-align">Considering:</p>
+            <ul>
+                <li>our target audience</li>
+                <ul>
+                    <li>company-internal apps</li>
+                </ul>
+                <li>we went with option #2</li>
+                <ul>
+                    <li>publish sources, styles and assets to npm</li>
+                </ul>
+            </ul>
+            <br/>
+            <p class="left-align">
+                <minor><small>
+                    If we were writing for the OSS community<br/>
+                    we'd likely had no choice but to go with option #1:<br/>
+                    compiled sources, UMD, etc..
+                </small></minor>
+            </p>
+        </section>
+
+        <!-- ===================================== -->
+        <!-- START Pre Angular 6 Component Library -->
+        <!-- ===================================== -->
+        <section>
+
+            <section>
+                <h3>Pre ngV6 component library </h3>
+                <ul>
+                    <li>Goals:</li>
+                    <ul>
+                        <li>create angular project</li>
+                        <li>containing sources, styles and assets</li>
+                        <li>to be published as npm module to internal registry</li>
+                        <li>also containing components allowing you</li>
+                        <li>to test your library locally</li>
+                    </ul>
+                </ul>
+            </section>
+
+            <!-- Step 1: Create a new project with angular/cli -->
+
+            <section>
+                <h3>Step 1: Create a new project</h3>
+                <ul>
+                    <li>this will be </li>
+                    <ul>
+                        <li>the wrapper project and</li>
+                        <li>the test consumer for your library</li>
+                    </ul>
+                </ul>
+                <br>
+                <pre>
+                    <code>
+        $ ng new ng-complib --prefix sfg-complib
+                    </code>
+                </pre>
+            </section>
+
+            <!-- Step 2: create a new module -->
+
+            <section>
+                <h3>Step 2: create a new module</h3>
+                <ul>
+                    <li>The library will reside in its own module</li>
+                </ul>
+                <br>
+                <pre><code>
+        $ ng g module component-library
+                </code></pre>
+            </section>
+
+            <!-- Step 3: create library components -->
+
+            <section>
+                <h3>Step 3: create library components</h3>
+                <ul>
+                    <li>create <b>Header</b> component</li>
+                </ul>
+                    <pre>
+                        <code>
+        $ ng g c component-library/header
+                        </code>
+                    </pre>
+                <ul>
+                    <li>create <b>Footer</b> component</li>
+                </ul>
+                <pre>
+                        <code>
+        $ ng g c component-library/footer
+                        </code>
+                    </pre>
+                <ul>
+                    <li>and so on</li>
+                </ul>
+            </section>
+
+            <!-- Step 4: export your library components -->
+
+            <section>
+                <h3>Step 4: export your library components</h3>
+                <ul>
+                    <li>In your library module, export your components</li>
+                </ul>
+                <pre><code>component-library.module.ts</code></pre>
+
+                <stretch>
+                <pre><code>
+
+@NgModule({
+  providers: [ /* Don't add the services here */ ],
+  imports: [
+    CommonModule
+  ],
+  declarations: [
+    HeaderComponent,
+    FooterComponent
+  ],
+  exports: [
+    HeaderComponent,
+    FooterComponent
+  ]
+})
+export class ComponentLibraryModule {
+  static forRoot() {
+    return {
+      ngModule: ComponentLibraryModule,
+      providers: [
+        // your provider services here
+      ]
+    };
+  }
+}
+
+
+                </code></pre>
+                </stretch>
+            </section>
+
 
         </section>
+        <!-- ===================================== -->
+        <!-- END Pre Angular 6 Component Library -->
+        <!-- ===================================== -->
+
+
     </div>
 </div>
 
