@@ -51,13 +51,12 @@
         <section>
             <h3>Who I am</h3>
             <ul>
-                <li>full-stack developer</li>
+                <li>developer</li>
                 <ul>
-                    <li>20+ yrs</li>
-                    <li>ton of Java b/e, APIs and middleware</li>
-                    <li>~ 2+ yrs of Angular</li>
+                    <li>ton of Java b/e, APIs, middleware</li>
+                    <li>2+ yrs of Angular</li>
                     <li>have come to appreciate TypeScript</li>
-                    <li>moving between Java and Angular</li>
+                    <li>switching between Java and Angular</li>
                 </ul>
             </ul>
         </section>
@@ -181,15 +180,19 @@
         <section>
 
             <section>
-                <h3>Pre ngV6 component library </h3>
+                <h3>pre-ngV6 component library </h3>
                 <ul>
-                    <li>Goals:</li>
+                    <li>Objective:</li>
                     <ul>
                         <li>create angular project</li>
-                        <li>containing sources, styles and assets</li>
-                        <li>to be published as npm module to internal registry</li>
-                        <li>also containing components allowing you</li>
-                        <li>to test your library locally</li>
+                        <li>containing sources, styles and assets.. </li>
+                        <li>.. and a wrapper component so we can </li>
+                        <ul>
+                            <li>test our library locally, and</li>
+                            <li>have a kitchen-sink view of library components</li>
+                        </ul>
+                        <li>eventually, we want to publish to NPM repo, and</li>
+                        <li>declare the library as dependency in any internal app</li>
                     </ul>
                 </ul>
             </section>
@@ -259,8 +262,6 @@
                     <li>In your library module, export your components</li>
                 </ul>
                 <pre><code>component-library.module.ts</code></pre>
-
-                <stretch>
                 <pre><code>
 
 @NgModule({
@@ -269,12 +270,12 @@
     CommonModule
   ],
   declarations: [
-    HeaderComponent,
-    FooterComponent
+    HeaderComponent,    <-- declare header
+    FooterComponent     <-- declare footer
   ],
   exports: [
-    HeaderComponent,
-    FooterComponent
+    HeaderComponent,    <-- export header
+    FooterComponent     <-- export footer
   ]
 })
 export class ComponentLibraryModule {
@@ -287,12 +288,200 @@ export class ComponentLibraryModule {
     };
   }
 }
-
-
                 </code></pre>
-                </stretch>
             </section>
 
+            <!-- Step 4: rename your library `module.ts` to `index.ts` -->
+            <section>
+                <h3>Step 4: rename your library's module.ts to index.ts</h3>
+                <p align="left-align">
+                    <pre><code>index.ts</code></pre> the convention for naming the main library file
+                </p>
+                    <pre><code>
+    $ mv component-library.module.ts index.ts
+                    </code></pre>
+                    
+
+            </section>
+
+            <!-- Folder structure -->
+            <section>
+                <h3>Here's what we have so far</h3>
+                <img src="./img/ng-complib-project-structure.png" style="width: 12em; height: 12em"/>
+            </section>
+
+            <!-- Test component library in the wrapper project -->
+            <section>
+                <h3>Testing the library in wrapper project</h3>
+                <ul>
+                    <li>import component library module in app.module.ts</li>
+                    <li>add any global styles and assets to angular.json
+                    <br><minor-paren>which used to be .angular-cli.json</minor-paren></li>
+                </ul>
+            </section>
+
+            <!-- Adding styles and assets to angular.json -->
+            <section>
+                <h3>Adding styles and assets to angular.json</h3>
+                <pre><code>
+        "assets": [
+            "src/assets",
+            {
+                "glob": "**/*",
+                "input": "src/app/component-library/assets",
+                "output": "/assets"
+            },
+            "src/favicon.ico"
+        ],
+        "styles": [
+            "src/app/component-library/sass/styles.scss"
+        ],
+                </code></pre>
+            </section>
+
+            <!-- using library components in a wrapper component -->
+            <section>
+                <h3>Using library components in a wrapper component</h3>
+                <pre><code>
+    <sfg-complib-header></sfg-complib-header>
+    <div style="text-align:center">
+    <h1>
+        App Component Content
+    </h1>
+    </div>
+    <sfg-complib-footer></sfg-complib-footer>                        
+                </code></pre>
+                <p align="left">all that's left is </p>
+                <pre><code>
+    $ ng serve
+                </code></pre>
+            </section>
+
+            <!-- great, now what?-->
+
+            <section>
+                <h3>Great! Now what?</h3>
+                <ul>
+                    <li>so, we're testing the library in the same project</li>
+                    <li>big deal.. </li>
+                    <li>now, let's test it in a different project</li>
+                    <li>eventually, we'll deploy it to an NPM repo</li>
+                    <li>but for now, let's somehow install this library as a dependency...</li>
+                    <li>.. in another "consumer" app that lives in the same filesystem.</li>
+                </ul>
+            </section>
+
+            <!-- Install library in another project -->
+            <section>
+                <h3>Install the library in another project</h3>
+                <p align="left"><code>ng new</code> another project</p>
+                <pre><code>
+    $ cd ..
+    $ ng new ng-complib-consumer
+    $ npm install ../ng-complib/src/app/component-library
+                </code></pre>
+                <p align="left">
+                <minor>
+                    You can also use <code>npm link</code>, but this way is much simpler.
+                </minor>
+                </p>
+            </section>
+
+            <!-- add library provided assets to consumer project -->
+
+            <section>
+                <h3>add library-provided assets</h3>
+                <p align="left-align">
+                    edit <code>.anglar-cli.json</code> (or now <code>angular.json</code>) 
+                    to include library-provided assets:
+                </p>
+                <pre><code>
+    "assets": [
+        "assets",
+        {
+            "glob": "**/*",
+            "input": "../node_modules/sfg-ng-complib/assets/",
+            "output": "./assets/"
+        },
+        "favicon.ico",
+        ".htaccess"
+    ],
+                </code></pre>
+            </section>
+
+            <!-- add library provided styles -->
+
+            <section>
+                <h3>add library-provided styles</h3>
+                <p align="left-align">
+                    Since we use SASS, edit <code>src/sass/styles.scss</code> to add
+                    the following line at the top:
+                </p>
+                <pre><code>
+@import '~sfg-ng-complib/sass/styles';
+                </code></pre>
+            </section>
+
+            <!-- finally, add the library module to app.module.ts -->
+
+            <section>
+                <h3>Import the library module</h3>
+                <ul>
+                    <li>import component library module</li>
+                    <li>into consumer's <code>app.module.ts</code>, and</li>
+                    <li>use <code>sfg-brand-header</code> and <code>sfg-brand-footer</code></li>
+                    <li>in angular templates.</li>
+                </ul>
+            </section>
+
+            <!-- Publish to NPM repo -->
+
+            <section>
+                <h3>Publish to NPM repo</h3>
+                <ul>
+                    <li>Once ready for a release</li>
+                    <li>prepare to publish to internal NPM repo.</li>
+                    <li>In the library project, make sure that the library's <code>package.json</code></li>
+                    <li>has the minimum required attributes, and execute: </li>
+                </ul>
+                <pre><code>
+    $ npm publish
+                </code></pre>
+            </section>
+
+            <!-- library's package.json -->
+
+            <section>
+                <h3>Library's <code>package.json</code></h3>
+                <pre><code>
+{
+    "name": "sfg-ng-complib",
+    "version": "1.0.0-SNAPSHOT.7",
+    "description": "Common Angular application components",
+    "main": "index.ts",
+    "scripts": {},
+    "repository": {
+        "type": "git",
+        "url": ""
+    },
+    "keywords": [
+        "angular",
+        "components"
+    ],
+    "author": "CORE Engineering",
+    "private": true,
+    "publishConfig": {
+        "registry": "https://nexus.company.com/repository/npm-internal"
+    },
+    "engines": {
+        "node": "8.9.3",
+        "npm": "5.6.0"
+    },
+    "dependencies": {},
+    "devDependencies": {}
+}
+                </code></pre>
+            </section>
 
         </section>
         <!-- ===================================== -->
