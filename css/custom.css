@@ -17,12 +17,17 @@ minor {
   color: grey;
 }
 
-minor:before {
-  content: '(';
+
+minor-paren {
+  color: grey;
 }
 
-minor:after {
-  content: ')';
+minor-paren:before {
+content: '(';
+}
+
+minor-paren:after {
+content: ')';
 }
 
 .left-align {
