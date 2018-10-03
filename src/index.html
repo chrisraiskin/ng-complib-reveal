@@ -185,7 +185,7 @@
                     <li>Objective:</li>
                     <ul>
                         <li>create angular project</li>
-                        <li>containing sources, styles and assets.. </li>
+                        <li>containing sources, global styles and assets.. </li>
                         <li>.. and a wrapper component so we can </li>
                         <ul>
                             <li>test our library locally, and</li>
@@ -244,11 +244,9 @@
                 <ul>
                     <li>create <b>Footer</b> component</li>
                 </ul>
-                <pre>
-                        <code>
+                <pre><code>
         $ ng g c component-library/footer
-                        </code>
-                    </pre>
+                </code></pre>
                 <ul>
                     <li>and so on</li>
                 </ul>
@@ -485,9 +483,58 @@ export class ComponentLibraryModule {
 
         </section>
         <!-- ===================================== -->
-        <!-- END Pre Angular 6 Component Library -->
+        <!-- END Pre Angular 6 Component Library   -->
         <!-- ===================================== -->
 
+
+
+        <!-- ===================================== -->
+        <!-- START ng6 Component Library           -->
+        <!-- ===================================== -->
+        <section>
+
+                <section>
+                    <h3>Angular 6 component library </h3>
+                    <ul>
+                        <li>Same Objectives:</li>
+                        <ul>
+                            <li>create angular project</li>
+                            <li>containing sources, global styles and assets.. </li>
+                            <li>.. and a wrapper component so we can </li>
+                            <ul>
+                                <li>test our library locally, and</li>
+                                <li>have a kitchen-sink view of library components</li>
+                            </ul>
+                            <li>eventually, we want to publish to NPM repo, and</li>
+                            <li>declare the library as dependency in any internal app</li>
+                        </ul>
+                    </ul>
+                </section>
+
+                <!-- ng 6 workspaces .. woah! -->
+
+                <section>
+                    <h3>ng6 workspaces - woah!</h3>
+                    <ul>
+                        <li>Angular 6 introduces workspaces</li>
+                        <li>where you can have one or more projects</li>
+                        <li>so the defalt app will be the test app</li>
+                        <li>and we can <pre><code>ng g library</code></pre></li>
+                        <li>to place it in the <minor>projects</minor> folder</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h3>ng6 workspaces</h3>
+                    <p class="left-align">default app and the projects folder:</p>
+                    <img src="./img/ng6-workspace-default-app.png" style="width: 10em"/>
+                    <img src="./img/ng6-lib-screenshot.png" style="width: 10em" />
+                </section>
+
+        </section>
+        <!-- ===================================== -->
+        <!-- END ng6 Component Library           -->
+        <!-- ===================================== -->
 
     </div>
 </div>
