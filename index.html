@@ -1,268 +1,262 @@
 <!doctype html>
 <html>
+
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-    <title>Angular component libraries</title>
+  <title>Angular component libraries</title>
 
-    <link rel="stylesheet" href="css/reveal.css">
-    <!--<link rel="stylesheet" href="css/theme/black.css">-->
-    <link rel="stylesheet" href="css/theme/night.css">
-    <link rel="stylesheet" href="css/custom.css">
+  <link rel="stylesheet" href="css/reveal.css">
+  <!--<link rel="stylesheet" href="css/theme/black.css">-->
+  <link rel="stylesheet" href="css/theme/night.css">
+  <link rel="stylesheet" href="css/custom.css">
 
-    <!-- Highlight.js -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/default.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/styles/atom-one-dark.min.css">
+  <!-- Highlight.js -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/default.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/styles/atom-one-dark.min.css">
 
 
-    <!-- Theme used for syntax highlighting of code -->
-    <!--<link rel="stylesheet" href="lib/css/zenburn.css">-->
+  <!-- Theme used for syntax highlighting of code -->
+  <!--<link rel="stylesheet" href="lib/css/zenburn.css">-->
 
-    <!-- Printing and PDF exports -->
-    <script>
-        var link = document.createElement('link');
-        link.rel = 'stylesheet';
-        link.type = 'text/css';
-        link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
-        document.getElementsByTagName('head')[0].appendChild(link);
-    </script>
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+    document.getElementsByTagName('head')[0].appendChild(link);
+  </script>
 </head>
+
 <body>
-<div class="reveal">
+  <div class="reveal">
     <div class="slides">
 
-        <!-- Title -->
-        <section>
-            <h3 style="line-height: 2em">
-                <img src="img/AngularJS-Shield-transparent.svg" style="display: inline-block; box-shadow: none; border: none; height: 1.5em; vertical-align: middle; background: rgba(0, 0, 0, 0)">
-                ngular
-                <br>
-                Component Libraries
-            </h3>
-            <p>before Angular v6 ... and after</p>
-            <small>
-            <p>presented by <a href="https://github.com/chrisraiskin/">chris.raiskin</a></p>
-            </small>
-        </section>
+      <!-- Title -->
+      <section>
+        <h3 style="line-height: 2em">
+          <img src="img/AngularJS-Shield-transparent.svg" style="display: inline-block; box-shadow: none; border: none; height: 1.5em; vertical-align: middle; background: rgba(0, 0, 0, 0)">
+          ngular
+          <br>
+          Component Libraries
+        </h3>
+        <p>before Angular v6 ... and after</p>
+        <small>
+          <p>presented by <a href="https://github.com/chrisraiskin/">chris.raiskin</a></p>
+        </small>
+      </section>
 
-        <!-- About -->
+      <!-- About -->
 
-        <section>
-            <h3>Who I am</h3>
-            <ul>
-                <li>developer</li>
-                <ul>
-                    <li>ton of Java b/e, APIs, middleware</li>
-                    <li>2+ yrs of Angular</li>
-                    <li>have come to appreciate TypeScript</li>
-                    <li>switching between Java and Angular</li>
-                </ul>
-            </ul>
-        </section>
+      <section>
+        <h3>Who I am</h3>
+        <ul>
+          <li>developer</li>
+          <ul>
+            <li>ton of Java b/e, APIs, middleware</li>
+            <li>2+ yrs of Angular</li>
+            <li>have come to appreciate TypeScript</li>
+            <li>switching between Java and Angular</li>
+          </ul>
+        </ul>
+      </section>
 
-        <!-- Where I work -->
+      <!-- Where I work -->
 
-        <section>
-            <h3>What I do</h3>
-            <ul>
-                <li>working for Standard Insurance</li>
-                <li>lead of the "portal" team</li>
-                <li>which</li>
-                <ul>
-                    <li>has introduced Angular at Standard</li>
-                    <li>while migrating away from WebSphere portal</li>
-                    <li>has partnered with the UX team</li>
-                    <li>to ensure theme and style consistency</li>
-                    <li>across home-grown web apps</li>
-                </ul>
+      <section>
+        <h3>What I do</h3>
+        <ul>
+          <li>currently at Standard Insurance</li>
+          <li>lead the "portal" team</li>
+          <li>which</li>
+          <ul>
+            <li>has introduced Angular at Standard</li>
+            <li>while migrating away from WebSphere portal</li>
+            <li>has partnered with our UX team</li>
+            <li>to ensure theme and style consistency</li>
+            <li>across home-grown web apps</li>
+          </ul>
 
-            </ul>
-        </section>
+        </ul>
+      </section>
 
-        <!-- Why Angular libraries -->
+      <!-- Why Angular libraries -->
 
-        <section>
+      <section>
 
-            <h3>why component libraries?</h3>
-            <ul>
-                <li>to achieve theme/style consistency</li>
-                <li>we wanted to distribute:</li>
-                <ul>
-                    <li>common theme components, like header and footer</li>
-                    <li>that we could include into Angular template</li>
-                    <pre><code>
+        <h3>why component libraries?</h3>
+        <ul>
+          <li>to achieve theme/style consistency,</li>
+          <li>our goal was to distribute:</li>
+          <ul>
+            <li>common theme components (e.g. header and footer)</li>
+            <li>that we could include into Angular template</li>
+            <pre><code>
     <sfg-brand-header></sfg-brand-header>
     <consuming-app-content></consuming-app-content>
     <sfg-brand-footer></sfg-brand-footer>
-                    </code>
-                    </pre>
-                    <li>common services, e.g. IAM services</li>
-                    <li>global styles</li>
-                    <li>global assets</li>
-                </ul>
-            </ul>
-        </section>
+            </code></pre>
+            <li>common services (e.g. session management)</li>
+            <li>global styles</li>
+            <li>global assets</li>
+          </ul>
+        </ul>
+      </section>
 
-        <!-- Cold winter of 2016 -->
+      <!-- Cold winter of 2016 -->
 
-        <section>
-            <h3>It was a cold winter of 2016 .. </h3>
-            <img src="./img/portland-winter-of-snow-and-ice-2016.jpg" style="width: 15em"/>
+      <section>
+        <h3>It was a cold winter of 2016 .. </h3>
+        <img src="./img/portland-winter-of-snow-and-ice-2016.jpg" style="width: 15em" />
+        <ul>
+          <li>Angular 4 just came out and</li>
+          <li>angular/cli still had no library support..</li>
+        </ul>
+      </section>
+
+      <!-- What options existed in 2016/2017? -->
+
+      <section>
+          <h3>Our options in 2016</h3>
+          <p class="left-align">Essentially, two:</p>
+          <ul>
+            <li>a fairly complex one that</li>
             <ul>
-                <li>Angular 4 just came out and</li>
-                <li>angular/cli still had no library support..</li>
+              <li>compiles the sources,</li>
+              <li>inlines CSS and HTML, and</li>
+              <li>runs Rollup.js to build UMD* and ES5 modules</li>
             </ul>
-        </section>
-
-        <!-- What options existed in 2016/2017? -->
-
-        <section>
-            <h3>Our options in 2016</h3>
-            <p class="left-align">
-                Essentially, two:
-            </p>
-            <ol>
-                <li>a fairly complex one that</li>
-                <ul>
-                    <li>compiles the sources</li>
-                    <li>inlines CSS and HTML</li>
-                    <li>runs Rollup.js to build UMD* and ES5 modules</li>
-                </ul>
-            or ..
-                <li>a relatively simple one that </li>
-                <ul>
-                    <li>
-                        publishes TypeScript sources, styles and assets to npm.
-                    </li>
-                </ul>
-            </ol>
-            <br/>
-            <br/>
-            <div class="left-align">
-                <minor>
-                    <small>
-                    *UMD - Universal Module Definition for JavaScript modules
-                    </small>
-                </minor>
-            </div>
-        </section>
-
-        <!-- Which was the right one for us? -->
-
-        <section>
-            <h3>Which option</h3>
-            <p class="left-align">was the right one for us in 2016?</p>
-            <p class="left-align">Considering:</p>
+            <li>a relatively simple one that </li>
             <ul>
-                <li>our target audience</li>
-                <ul>
-                    <li>company-internal apps</li>
-                </ul>
-                <li>we went with option #2</li>
-                <ul>
-                    <li>publish sources, styles and assets to npm</li>
-                </ul>
+              <li>packages TypeScript sources, styles and assets, and</li>
+              <li>publishes them to an NPM registry</li>
             </ul>
-            <br/>
-            <p class="left-align">
-                <minor><small>
-                    If we were writing for the OSS community<br/>
-                    we'd likely had no choice but to go with option #1:<br/>
-                    compiled sources, UMD, etc..
-                </small></minor>
-            </p>
+          </ul>
+          <br>
+          <br>
+          <div class="left-align">
+            <minor>
+              <small>
+                *UMD - Universal Module Definition for JavaScript modules
+              </small>
+            </minor>
+          </div>
+        </section>      
+
+      <!-- Which was the right one for us? -->
+
+      <section>
+        <h3>Which option</h3>
+        <p class="left-align">was the right one for us in 2016?</p>
+        <p class="left-align">Considering:</p>
+        <ul>
+          <li>our target audience:</li>
+          <ul>
+            <li>company-internal apps</li>
+          </ul>
+          <li>we went with option #2:</li>
+          <ul>
+            <li>publish sources, styles and assets to npm</li>
+          </ul>
+        </ul>
+        <br />
+        <p class="left-align">
+          <minor><small>
+              If we were writing for the OSS community we'd likely had no choice but to go with option #1:
+              compiled sources, UMD, ..
+            </small></minor>
+        </p>
+      </section>
+
+      <!-- ===================================== -->
+      <!-- START Pre Angular 6 Component Library -->
+      <!-- ===================================== -->
+      <section>
+
+        <section>
+          <h3>pre-ng6 component library </h3>
+          <ul>
+            <li>Objective:</li>
+            <ul>
+              <li>create an angular project</li>
+              <li>containing sources, global styles and assets, and</li>
+              <li>a wrapper component so we can </li>
+              <ul>
+                <li>test our library locally, and</li>
+                <li>have a kitchen-sink view of library components</li>
+              </ul>
+              <li>eventually, we want to publish to NPM repo, and</li>
+              <li>declare the library as dependency in any internal app</li>
+            </ul>
+          </ul>
         </section>
 
-        <!-- ===================================== -->
-        <!-- START Pre Angular 6 Component Library -->
-        <!-- ===================================== -->
+        <!-- Step 1: Create a new project with angular/cli -->
+
         <section>
-
-            <section>
-                <h3>pre-ngV6 component library </h3>
-                <ul>
-                    <li>Objective:</li>
-                    <ul>
-                        <li>create angular project</li>
-                        <li>containing sources, styles and assets.. </li>
-                        <li>.. and a wrapper component so we can </li>
-                        <ul>
-                            <li>test our library locally, and</li>
-                            <li>have a kitchen-sink view of library components</li>
-                        </ul>
-                        <li>eventually, we want to publish to NPM repo, and</li>
-                        <li>declare the library as dependency in any internal app</li>
-                    </ul>
-                </ul>
-            </section>
-
-            <!-- Step 1: Create a new project with angular/cli -->
-
-            <section>
-                <h3>Step 1: Create a new project</h3>
-                <ul>
-                    <li>this will be </li>
-                    <ul>
-                        <li>the wrapper project and</li>
-                        <li>the test consumer for your library</li>
-                    </ul>
-                </ul>
-                <br>
-                <pre>
+          <h3>Step 1: Create a new project</h3>
+          <ul>
+            <li>that will contain</li>
+            <ul>
+              <li>the library itself, and</li>
+              <li>a test consumer for your library</li>
+            </ul>
+          </ul>
+          <br>
+          <pre>
                     <code>
         $ ng new ng-complib --prefix sfg-complib
                     </code>
                 </pre>
-            </section>
+        </section>
 
-            <!-- Step 2: create a new module -->
+        <!-- Step 2: create a new module -->
 
-            <section>
-                <h3>Step 2: create a new module</h3>
-                <ul>
-                    <li>The library will reside in its own module</li>
-                </ul>
-                <br>
-                <pre><code>
+        <section>
+          <h3>Step 2: create a new module</h3>
+          <ul>
+            <li>The library will reside in its own module</li>
+          </ul>
+          <br>
+          <pre><code>
         $ ng g module component-library
                 </code></pre>
-            </section>
+        </section>
 
-            <!-- Step 3: create library components -->
+        <!-- Step 3: create library components -->
 
-            <section>
-                <h3>Step 3: create library components</h3>
-                <ul>
-                    <li>create <b>Header</b> component</li>
-                </ul>
-                    <pre>
+        <section>
+          <h3>Step 3: create library components</h3>
+          <ul>
+            <li>create <b>Header</b> component</li>
+          </ul>
+          <pre>
                         <code>
         $ ng g c component-library/header
                         </code>
                     </pre>
-                <ul>
-                    <li>create <b>Footer</b> component</li>
-                </ul>
-                <pre>
-                        <code>
+          <ul>
+            <li>create <b>Footer</b> component</li>
+          </ul>
+          <pre><code>
         $ ng g c component-library/footer
-                        </code>
-                    </pre>
-                <ul>
-                    <li>and so on</li>
-                </ul>
-            </section>
+                </code></pre>
+          <ul>
+            <li>and so on</li>
+          </ul>
+        </section>
 
-            <!-- Step 4: export your library components -->
+        <!-- Step 4: export your library components -->
 
-            <section>
-                <h3>Step 4: export your library components</h3>
-                <ul>
-                    <li>In your library module, export your components</li>
-                </ul>
-                <pre><code>component-library.module.ts</code></pre>
-                <pre><code>
+        <section>
+          <h3>Step 4: export your library components</h3>
+          <ul>
+            <li>In your library module, export your components</li>
+          </ul>
+          <pre><code>component-library.module.ts</code></pre>
+          <pre><code>
 
 @NgModule({
   providers: [ /* Don't add the services here */ ],
@@ -289,41 +283,56 @@ export class ComponentLibraryModule {
   }
 }
                 </code></pre>
-            </section>
+        </section>
 
-            <!-- Step 4: rename your library `module.ts` to `index.ts` -->
-            <section>
-                <h3>Step 4: rename your library's module.ts to index.ts</h3>
-                <p align="left-align">
-                    <pre><code>index.ts</code></pre> the convention for naming the main library file
-                </p>
-                    <pre><code>
+        <!-- Step 4: rename your library `module.ts` to `index.ts` -->
+        <section>
+          <h3>Step 4: rename your library's module.ts to index.ts</h3>
+          <p align="left-align">
+            <pre><code>index.ts</code></pre> the convention for naming the main library file
+          </p>
+          <pre><code>
     $ mv component-library.module.ts index.ts
                     </code></pre>
-                    
 
-            </section>
 
-            <!-- Folder structure -->
-            <section>
-                <h3>Here's what we have so far</h3>
-                <img src="./img/ng-complib-project-structure.png" style="width: 12em; height: 12em"/>
-            </section>
+        </section>
 
-            <!-- Test component library in the wrapper project -->
-            <section>
-                <h3>Testing the library in wrapper project</h3>
-                <ul>
-                    <li>import component library module in app.module.ts</li>
-                    <li>add any global styles and assets to angular.json
-                    <br><minor-paren>which used to be .angular-cli.json</minor-paren></li>
-                </ul>
-            </section>
+        <!-- Folder structure -->
+        <section>
+          <h3>Here's what we have so far</h3>
+          <img src="./img/ng-complib-project-structure.png" style="width: 12em; height: 12em" />
+        </section>
 
-            <!-- Adding styles and assets to angular.json -->
-            <section>
-                <h3>Adding styles and assets to angular.json</h3>
-                <pre><code>
+        <!-- Test component library in the wrapper project -->
+        <section>
+          <h3>Testing the library in wrapper project</h3>
+          <ul>
+            <li>import component library module in app.module.ts</li>
+            <li>add any global styles and assets to angular.json
+              <br>
+              <minor-paren>which used to be .angular-cli.json</minor-paren>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Import component library in app.module.ts -->
+
+        <section>
+          <h3>Import component library in <hilite>app.module.ts</hilite></h3>
+          <pre><code>
+    imports: [
+      BrowserModule,
+      RouterModule.forRoot(appRoutes),   
+      ComponentLibraryModule.forRoot()   <-- import lib module
+    ],            
+          </code></pre>
+        </section>
+
+        <!-- Adding styles and assets to angular.json -->
+        <section>
+          <h3>Adding styles and assets to angular.json</h3>
+          <pre><code>
         "assets": [
             "src/assets",
             {
@@ -337,12 +346,12 @@ export class ComponentLibraryModule {
             "src/app/component-library/sass/styles.scss"
         ],
                 </code></pre>
-            </section>
+        </section>
 
-            <!-- using library components in a wrapper component -->
-            <section>
-                <h3>Using library components in a wrapper component</h3>
-                <pre><code>
+        <!-- using library components in a wrapper component -->
+        <section>
+          <h3>Using library components in a wrapper component</h3>
+          <pre><code>
     <sfg-complib-header></sfg-complib-header>
     <div style="text-align:center">
     <h1>
@@ -351,51 +360,50 @@ export class ComponentLibraryModule {
     </div>
     <sfg-complib-footer></sfg-complib-footer>                        
                 </code></pre>
-                <p align="left">all that's left is </p>
-                <pre><code>
+          <p align="left">all that's left is </p>
+          <pre><code>
     $ ng serve
                 </code></pre>
-            </section>
+        </section>
 
-            <!-- great, now what?-->
+        <!-- great, now what?-->
 
-            <section>
-                <h3>Great! Now what?</h3>
-                <ul>
-                    <li>so, we're testing the library in the same project</li>
-                    <li>big deal.. </li>
-                    <li>now, let's test it in a different project</li>
-                    <li>eventually, we'll deploy it to an NPM repo</li>
-                    <li>but for now, let's somehow install this library as a dependency...</li>
-                    <li>.. in another "consumer" app that lives in the same filesystem.</li>
-                </ul>
-            </section>
+        <section>
+          <h3>Great! Now what?</h3>
+          <ul>
+            <li>so, we're testing the library in the same project</li>
+            <li>big deal.. </li>
+            <li>now, let's test it in a different project</li>
+            <li>eventually, we'll deploy it to an NPM repo</li>
+            <li>for now, let's install this library as a dependency</li>
+            <li>in another <hilite>consumer</hilite> app that lives in the same filesystem.</li>
+          </ul>
+        </section>
 
-            <!-- Install library in another project -->
-            <section>
-                <h3>Install the library in another project</h3>
-                <p align="left"><code>ng new</code> another project</p>
-                <pre><code>
+        <!-- Install library in another project -->
+        <section>
+          <h3>Install the library in another project</h3>
+          <pre><code>
     $ cd ..
     $ ng new ng-complib-consumer
     $ npm install ../ng-complib/src/app/component-library
                 </code></pre>
-                <p align="left">
-                <minor>
-                    You can also use <code>npm link</code>, but this way is much simpler.
-                </minor>
-                </p>
-            </section>
+          <p align="left">
+            <minor>
+              You can also use <code>npm link</code>, but this way is much simpler
+            </minor>
+          </p>
+        </section>
 
-            <!-- add library provided assets to consumer project -->
+        <!-- add library provided assets to consumer project -->
 
-            <section>
-                <h3>add library-provided assets</h3>
-                <p align="left-align">
-                    edit <code>.anglar-cli.json</code> (or now <code>angular.json</code>) 
-                    to include library-provided assets:
-                </p>
-                <pre><code>
+        <section>
+          <h3>add library-provided assets</h3>
+          <p align="left">
+            edit <code>.anglar-cli.json</code> (or now <code>angular.json</code>)
+          </p>
+          <p align="left">to include library-provided assets:</p>
+          <pre><code>
     "assets": [
         "assets",
         {
@@ -406,54 +414,54 @@ export class ComponentLibraryModule {
         "favicon.ico",
         ".htaccess"
     ],
-                </code></pre>
-            </section>
+          </code></pre>
+        </section>
 
-            <!-- add library provided styles -->
+        <!-- add library provided styles -->
 
-            <section>
-                <h3>add library-provided styles</h3>
-                <p align="left-align">
-                    Since we use SASS, edit <code>src/sass/styles.scss</code> to add
-                    the following line at the top:
-                </p>
-                <pre><code>
+        <section>
+          <h3>add library-provided styles</h3>
+          <p align="left-align">
+            Since we use SASS, edit <code>src/sass/styles.scss</code> to add
+            the following line at the top:
+          </p>
+          <pre><code>
 @import '~sfg-ng-complib/sass/styles';
                 </code></pre>
-            </section>
+        </section>
 
-            <!-- finally, add the library module to app.module.ts -->
+        <!-- finally, add the library module to app.module.ts -->
 
-            <section>
-                <h3>Import the library module</h3>
-                <ul>
-                    <li>import component library module</li>
-                    <li>into consumer's <code>app.module.ts</code>, and</li>
-                    <li>use <code>sfg-brand-header</code> and <code>sfg-brand-footer</code></li>
-                    <li>in angular templates.</li>
-                </ul>
-            </section>
+        <section>
+          <h3>Import the library module</h3>
+          <ul>
+            <li>import component library module</li>
+            <li>into consumer's <code>app.module.ts</code>, and</li>
+            <li>use <code>sfg-brand-header</code> and <code>sfg-brand-footer</code></li>
+            <li>in angular templates.</li>
+          </ul>
+        </section>
 
-            <!-- Publish to NPM repo -->
+        <!-- Publish to NPM repo -->
 
-            <section>
-                <h3>Publish to NPM repo</h3>
-                <ul>
-                    <li>Once ready for a release</li>
-                    <li>prepare to publish to internal NPM repo.</li>
-                    <li>In the library project, make sure that the library's <code>package.json</code></li>
-                    <li>has the minimum required attributes, and execute: </li>
-                </ul>
-                <pre><code>
+        <section>
+          <h3>Publish to NPM repo</h3>
+          <ul>
+            <li>Once ready for a release</li>
+            <li>prepare to publish to internal NPM repo.</li>
+            <li>In the library project, make sure that the library's <code>package.json</code></li>
+            <li>has the minimum required attributes, and execute: </li>
+          </ul>
+          <pre><code>
     $ npm publish
                 </code></pre>
-            </section>
+        </section>
 
-            <!-- library's package.json -->
+        <!-- library's package.json -->
 
-            <section>
-                <h3>Library's <code>package.json</code></h3>
-                <pre><code>
+        <section>
+          <h3>Library's <code>package.json</code></h3>
+          <pre><code>
 {
     "name": "sfg-ng-complib",
     "version": "1.0.0-SNAPSHOT.7",
@@ -481,36 +489,379 @@ export class ComponentLibraryModule {
     "devDependencies": {}
 }
                 </code></pre>
-            </section>
+        </section>
+
+      </section>
+      <!-- ===================================== -->
+      <!-- END Pre Angular 6 Component Library   -->
+      <!-- ===================================== -->
+
+
+
+      <!-- ===================================== -->
+      <!-- START ng6 Component Library           -->
+      <!-- ===================================== -->
+      <section>
+
+        <section>
+          <h3>Angular 6 component library </h3>
+          <ul>
+            <li>Same Objectives:</li>
+            <ul>
+              <li>create angular project</li>
+              <li>containing sources, global styles and assets.. </li>
+              <li>.. and a wrapper component so we can </li>
+              <ul>
+                <li>test our library locally, and</li>
+                <li>have a kitchen-sink view of library components</li>
+              </ul>
+              <li>eventually, we want to publish to NPM repo, and</li>
+              <li>declare the library as dependency in any internal app</li>
+            </ul>
+          </ul>
+        </section>
+
+        <!-- ng 6 workspaces .. woah! -->
+
+        <section>
+          <h3>ng6 workspaces - woah!</h3>
+          <ul>
+            <li>Angular 6 introduces workspaces</li>
+            <li>where you can have one or more projects</li>
+            <li>so the default app will be the test app</li>
+            <li>and we can
+              <pre><code>ng g library</code></pre>
+            </li>
+            <li>to place the library code into the <hilite>projects</hilite> folder</li>
+          </ul>
+        </section>
+
+        <!-- Step 1: create a new ng6 workspace -->
+
+        <section>
+          <h3>Step 1: Create ng6 workspace</h3>
+          <p class="left-align">
+            The default app created will be our internal test consumer for the library:
+          </p>
+          <pre><code>
+        $ ng new ng6-complib-test-app
+          </code></pre>
+          <p class="left-align">
+            Create <hilite>ng6-complib-test-app</hilite> project in the workspace.
+            Rename the workspace to match the name of the library:
+          </p>
+          <pre><code>
+        $ mv ng6-complib-test-app ng6-complib
+          </code></pre>
+        </section>
+
+        <!-- Step 2: generate the library -->
+
+        <section>
+          <h3>generate the library</h3>
+          <pre><code>
+        $ ng g library ng6-complib --prefix=sfg-complib
+                    </code></pre>
+        </section>
+
+        <!-- Default app and library screenshots -->
+
+        <section>
+          <h3>ng6 workspaces</h3>
+          <p class="left-align">default app and the projects folder:</p>
+          <img src="./img/ng6-workspace-default-app.png" style="width: 10em" />
+          <img src="./img/ng6-lib-screenshot.png" style="width: 10em" />
+        </section>
+
+        <!-- Step 3: add components to the library -->
+
+        <section>
+          <h3>add components to the library</h3>
+          <pre><code>
+        $ ng g c header --project=ng6-complib
+        $ ng g c footer --project=ng6-complib
+                    </code></pre>
+        </section>
+
+        <!-- Step 4: add components to the library module exports -->
+
+        <section>
+          <h3>Step 4: add components to lib module exports</h3>
+          <pre><code>
+        @NgModule({
+          providers: [ /* none here */],
+          imports: [
+            CommonModule
+          ],
+          declarations: [
+            HeaderComponent,
+            FooterComponent
+          ],
+          exports: [
+            HeaderComponent,
+            FooterComponent
+          ]
+        })
+        export class ComponentLibraryModule {
+          static forRoot() {
+            return {
+              ngModule: ComponentLibraryModule,
+              providers: [
+                // your library providers here
+              ]
+            };
+          }
+        }
+          </code></pre>
+        </section>
+
+        <!-- Step 5: add components to ng-packagr entry file -->
+
+        <section>
+          <h3>Step 5: ng-packagr entry file</h3>
+          <ul>
+            <li>Angular Package Format defines a special file</li>
+            <li><hilite>public_api.ts</hilite></li>
+            <li>that declares the library's public interface</li>
+            <pre><code>
+        export * from './lib/header/header.component';
+        export * from './lib/footer/footer.component';
+            </code></pre>
+            <li>library consumers will be able to use these components as if they were defined locally</li>
+          </ul>
+        </section>
+
+        <!-- Step 6: build the library -->
+
+        <section>
+          <h3>Step 6: build the libary</h3>
+          <pre><code>
+    $ ng build --prod ng6-complib
+          </code></pre>
+          <p>always use <hilite>--prod</hilite> flag</p>
+          <pre><code>
+    $ ng build --prod example-ng6-lib
+    Building Angular Package
+    Building entry point 'example-ng6-lib'
+    Rendering Stylesheets
+    Rendering Templates
+    Compiling TypeScript sources through ngc
+    Bundling to FESM2015
+    Bundling to FESM5
+    Bundling to UMD
+    Minifying UMD bundle
+    Copying declaration files
+    Writing package metadata
+    Removing scripts section in package.json as it's considered 
+    a potential security vulnerability.
+    Built example-ng6-lib
+    Built Angular Package!
+    - from: /example-ng6-lib/projects/example-ng6-lib
+    - to:   /example-ng6-lib/dist/example-ng6-lib
+          </code></pre>
+        </section>
+
+        <!-- test library in this workspace -->
+
+        <section>
+          <h3>Test library in its own workspace</h3>
+          <p align="left">import component library into test app's <hilite>AppModule</hilite>:</p>
+          <pre><code>
+    ./src/app/app.module.ts
+          </code></pre>
+
+          <pre><code>
+    imports: [
+      BrowserModule,
+      RouterModule.forRoot(appRoutes),
+      ComponentLibraryModule.forRoot()  <-- imports component library
+    ],
+          </code></pre>
 
         </section>
-        <!-- ===================================== -->
-        <!-- END Pre Angular 6 Component Library -->
-        <!-- ===================================== -->
+
+        <!-- use library in a template -->
+
+        <section>
+          <h3>Use in a template</h3>
+          <p align="left">test app's template:</p>
+          <pre><code>
+      ./src/app/app.component.html
+          </code></pre>
+
+          <pre><code>
+      <sfg-complib-header></sfg-complib-header>
+      <div style="text-align:center">
+        <h1>
+          App Component Content
+        </h1>
+      </div>
+      <sfg-complib-footer></sfg-complib-footer>
+          </code></pre>
+        </section>
+
+        <!-- test the library in another app -->
+
+        <section>
+          <h3>To use the library in another app</h3>
+          <ul>
+            <li>build the library</li>
+            <pre><code>
+$ ng build --prod ng6-complib
+            </code></pre>
+            <li>package as a single archive for distribution</li>
+            <pre><code>
+$ cd dist/ng6-complib
+$ npm pack
+            </code></pre>            
+            <li>publish to an NPM registry</li>
+            <pre><code>
+$ npm publish ./dist/ng6-complib/ng6-complib-0.0.1.tgz
+            </code></pre>
+          </ul>
+        </section>
+
+        <!-- import into AppModule and use in a template -->
+        
+        <section>
+          <h3>Import and use to taste</h3>
+          <p align="left">import into consumer app's root module:</p>
+          <pre><code>
+  imports: [
+    BrowserModule,
+    ComponentLibraryModule.forRoot(),  <-- import component library
+    RouterModule.forRoot(appRoutes)
+  ],
+          </code></pre>
+          <p align="left">and use library components in a template:</p>
+          <pre><code>
+  <sfg-complib-header></sfg-complib-header>
+  <div style="text-align:center">
+    <h1>
+      App Component Content
+    </h1>
+  </div>
+  <sfg-complib-footer></sfg-complib-footer>
+          </code></pre>
+        </section>
+
+        <!-- ng6 library shortcomings - global styles -->
+
+        <section>
+          <h3>TODO: support global styles</h3>
+          <ul>
+            <li>no support for packaging global styles like:</li>
+            <pre><code>
+    "styles": [
+      "../node_modules/component-library/sass/styles.scss"
+    ],
+            </code></pre>            
+            <li>open <a href="https://github.com/angular/angular-cli/issues/10869">issue #10869</a></li>
+            <li>this is  <hilite>ng-packagr</hilite> limitation</li>
+            <li>workaround:</li>
+            <li>run CSS compilation in post-buid script, and.. </li>
+            <li>copy compiled styles into <hilite>dist</hilite> before packaging.</li>
+          </ul>
+
+        </section>
+
+        <!-- ng6 library shortcomings - global assets -->
+
+                <!-- ng6 library shortcomings - global styles -->
+
+        <section>
+            <h3>TODO: support global assets</h3>
+            <ul>
+              <li>no support for global styles like:</li>
+              <pre><code>
+    "assets": [
+      "src/assets",
+      {
+        "glob": "**/*",
+        "input": "../node_modules/component-library/assets/",
+        "output": "./assets/"
+      }
+    ],                
+              </code></pre>
+              <li>open <a href="https://github.com/angular/angular-cli/issues/10927">issue #10927</a></li>
+              <li>likely <hilite>ng-packagr</hilite> limitation</li>
+              <li>workaround:</li>
+              <li>copy assets into <hilite>dist</hilite> before packaging.</li>
+            </ul>
+  
+          </section>
+
+      </section>
+      <!-- ===================================== -->
+      <!-- END ng6 Component Library             -->
+      <!-- ===================================== -->
+
+      <!-- comparison -->
+      <section>
+        <h3>Side by Side</h3>
+        <table style="border: 1px solid black; border-collapse: collapse;">
+          <thead>
+            <tr style="background-color: grey; color: black;">
+              <th>packing source code</th>
+              <th>ng-packagr based</th>
+            </tr></thead>
+            <tbody><tr>
+              <td>still a simple, viable option</td>
+              <td>seems straight forward as well</td>
+            </tr>
+            <tr>
+              <td>company-internal only</td>
+              <td>meets UMD reqs for NPM dist</td>
+              </tr>            
+            <tr>
+              <td>handles global assets/styles</td>
+              <td>as of ng6, no global asset/style support</td>
+            </tr>
+            <tr>
+              <td>requires lib code compatibility with consumer app</td>
+              <td>since compiled, should be more resilient to version changes</td>
+            </tr>            
+          </tbody>
+        </table>
+      </section>
+
+
+      <!-- In Closing -->
+
+      <section>
+        <h3>Thank you!</h3>
+        <p align="left">pre-ng6 library demo</p>
+        <p align="left"><a href="https://github.com/chrisraiskin/ng-complib">https://github.com/chrisraiskin/ng-complib</a></p>
+        <p align="left">ng6 library demo</p>
+        <p align="left"><a href="https://github.com/chrisraiskin/ng6-complib">https://github.com/chrisraiskin/ng6-complib</a></p>
+        <p align="left">Presentation:</p>
+        <p align="left"><a href="https://chrisraiskin.github.io/ng-complib-reveal/">https://chrisraiskin.github.io/ng-complib-reveal/</a></p>
+      </section>
 
 
     </div>
-</div>
+  </div>
 
-<script src="lib/js/head.min.js"></script>
-<script src="js/reveal.js"></script>
+  <script src="lib/js/head.min.js"></script>
+  <script src="js/reveal.js"></script>
 
-<script>
+  <script>
     // More info about config & dependencies:
     // - https://github.com/hakimel/reveal.js#configuration
     // - https://github.com/hakimel/reveal.js#dependencies
     Reveal.initialize({
-        dependencies: [
-            {src: 'plugin/markdown/marked.js'},
-            {src: 'plugin/markdown/markdown.js'},
-            {src: 'plugin/notes/notes.js', async: true},
-            {
-                src: 'plugin/highlight/highlight.js', async: true, callback: function () {
-                    hljs.initHighlightingOnLoad();
-                }
-            }
-        ]
+      dependencies: [
+        { src: 'plugin/markdown/marked.js' },
+        { src: 'plugin/markdown/markdown.js' },
+        { src: 'plugin/notes/notes.js', async: true },
+        {
+          src: 'plugin/highlight/highlight.js', async: true, callback: function () {
+            hljs.initHighlightingOnLoad();
+          }
+        }
+      ]
     });
-</script>
+  </script>
 </body>
+
 </html>

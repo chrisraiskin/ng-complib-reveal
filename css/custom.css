@@ -9,6 +9,11 @@ h1, h2, h3, h4, h5 {
   text-transform: inherit !important;
 }
 
+hilite {
+  font-family: helvetica, arial, freesans, clean, sans-serif;
+  color: rgb(205, 140, 40);
+}
+
 ul ul {
   font-size: 0.75em !important;
 }
